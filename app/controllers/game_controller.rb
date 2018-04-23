@@ -1,6 +1,9 @@
 class GameController < ApplicationController
     def try
-        cookies[:name] = params[:name] unless params[:name].nil?
+        @playername = params[:name]
+        if @playername != nil
+            cookies[:name] = @playername
+        end
         if session[:number] == nil
             session[:number] = rand(1..100)
         end
