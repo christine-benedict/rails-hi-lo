@@ -1,9 +1,8 @@
 class GameController < ApplicationController
     def try
-        @playername = params[:name]
 
-        if @playername != nil
-            cookies[:name] = @playername
+        if params[:name] != ""
+            cookies[:name] = params[:name]
         end
 
         if session[:number] == nil
@@ -27,10 +26,11 @@ class GameController < ApplicationController
 
         render "try.html.erb"
     end
-    
+
     def reset
         session[:number] = nil
         cookies[:counter] = 0
+        cookies[:name] = ""
         render "try.html.erb"
     end
 end

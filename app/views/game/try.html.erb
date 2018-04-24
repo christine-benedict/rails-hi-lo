@@ -3,3 +3,13 @@
     Try number: <%= cookies[:counter] %><br/>
     Name: <%= cookies[:name] %>
 </h2>
+<hr />
+<form action = "game" method = "get">
+    <label for = "name">Enter your name!</label>
+    <input type = "text" name = "name" />
+    <label for = "number">Guess a number between 1 and 100: </label>
+    <input type = "number" name = "number" min="1" max="100" required /><br />
+    <input type = "submit" value = "Make your guess" />
+</form><form action = "new_game" method = "get">
+    <input type = "submit" value = "New Game" />
+</form>
